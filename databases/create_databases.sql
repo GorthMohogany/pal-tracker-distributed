@@ -7,8 +7,8 @@ DROP DATABASE IF EXISTS tracker_backlog_test;
 DROP DATABASE IF EXISTS tracker_registration_test;
 DROP DATABASE IF EXISTS tracker_timesheets_test;
 
-CREATE USER IF NOT EXISTS 'tracker'@'localhost'
-  identified by '';
+CREATE USER IF NOT EXISTS 'tracker'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+
 GRANT ALL PRIVILEGES ON *.* TO 'tracker' @'localhost';
 
 CREATE DATABASE tracker_allocations_dev;
