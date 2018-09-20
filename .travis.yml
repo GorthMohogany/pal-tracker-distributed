@@ -19,9 +19,9 @@ jobs:
         mariadb: '10.2'
       install: skip
       before_script:
+        - chmod 755 gradlew
         - mysql -uroot < databases/create_databases.sql
         - ./gradlew testMigrate
-        - chmod 755 gradlew
       script: ./gradlew clean build
       before_deploy:
         - git config --local user.name "pivotal-mark-lugo"
@@ -94,5 +94,6 @@ jobs:
         - sudo apt-get update
         - sudo apt-get install cf-cli
       script:
+        - chmod 755 gradlew
         - cf login -a $CF_API_URL -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s review
         - ./gradlew cfMigrate
