@@ -3,7 +3,6 @@ applications:
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
   - route: backlog-pal-juppiter.cfapps.io
-  memory: 700mb
   instances: 1
   env:
     REGISTRATION_SERVER_ENDPOINT: https://allocations-pal-juppiter.cfapps.io/
