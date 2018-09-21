@@ -3,7 +3,7 @@ applications:
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
   - route: registration-pal-juppiter.cfapps.io
-  memory: 512mb
+  memory: 700mb
   instances: 1
   services:
   - tracker-registration-database
