@@ -44,8 +44,8 @@ jobs:
         - echo "Downloading allocations server $RELEASE_TAG"
         - wget -P applications/allocations-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/allocations-server.jar
       before_deploy:
-        - chmod 755 gradlew
         - cp manifest-allocations.yml manifest.yml
+        - chmod 755 gradlew
         - echo "Deploying allocations server $RELEASE_TAG"
       deploy: &cloudfoundry
         provider: cloudfoundry
@@ -62,8 +62,8 @@ jobs:
         - echo "Downloading backlog server $RELEASE_TAG"
         - wget -P applications/backlog-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/backlog-server.jar
       before_deploy:
-        - chmod 755 gradlew
         - cp manifest-backlog.yml manifest.yml
+        - chmod 755 gradlew
         - echo "Deploying backlog server $RELEASE_TAG"
       deploy:
         <<: *cloudfoundry
