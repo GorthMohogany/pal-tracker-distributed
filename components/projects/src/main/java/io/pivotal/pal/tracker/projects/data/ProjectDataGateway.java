@@ -46,10 +46,13 @@ public class ProjectDataGateway {
     }
 
     public ProjectRecord find(long id) {
+        System.out.println("ProjectDataGateway find()");
         List<ProjectRecord> list = jdbcTemplate.query(
             "select id, account_id, name, active from projects where id = ? order by name asc",
             rowMapper, id
         );
+
+        System.out.println("ProjectDataGateway find() query result size: " + list.size());
 
         if (list.isEmpty()) {
             return null;
