@@ -56,8 +56,9 @@ jobs:
         space: review
     - stage: deploy
       language: bash
-      script:
+      before_script:
         - chmod 755 gradlew
+      script:
         - echo "Downloading backlog server $RELEASE_TAG"
         - wget -P applications/backlog-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/backlog-server.jar
       before_deploy:
@@ -68,6 +69,8 @@ jobs:
         <<: *cloudfoundry
     - stage: deploy
       language: bash
+      before_script:
+      - chmod 755 gradlew
       script:
         - chmod 755 gradlew
         - echo "Downloading registration server $RELEASE_TAG"
@@ -98,7 +101,8 @@ jobs:
         - echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
         - sudo apt-get update
         - sudo apt-get install cf-cli
-      script:
+      before_script:
         - chmod 755 gradlew
+      script:
         - cf login -a $CF_API_URL -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s review
         - ./gradlew cfMigrate
