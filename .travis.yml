@@ -38,6 +38,8 @@ jobs:
         skip_cleanup: true
     - stage: deploy
       language: java
+      before_install:
+        - chmod 755 gradlew
       before_script:
         - chmod 755 gradlew
       script:
@@ -56,6 +58,8 @@ jobs:
         space: review
     - stage: deploy
       language: bash
+      before_install:
+      - chmod 755 gradlew
       before_script:
         - chmod 755 gradlew
       script:
@@ -69,6 +73,8 @@ jobs:
         <<: *cloudfoundry
     - stage: deploy
       language: bash
+      before_install:
+      - chmod 755 gradlew
       before_script:
       - chmod 755 gradlew
       script:
@@ -83,6 +89,8 @@ jobs:
         <<: *cloudfoundry
     - stage: deploy
       language: bash
+      before_install:
+      - chmod 755 gradlew
       before_script:
       - chmod 755 gradlew
       script:
