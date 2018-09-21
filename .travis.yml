@@ -38,8 +38,9 @@ jobs:
         skip_cleanup: true
     - stage: deploy
       language: java
-      script:
+      before_script:
         - chmod 755 gradlew
+      script:
         - echo "Downloading allocations server $RELEASE_TAG"
         - wget -P applications/allocations-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/allocations-server.jar
       before_deploy:
@@ -76,8 +77,9 @@ jobs:
         <<: *cloudfoundry
     - stage: deploy
       language: bash
+      before_script:
+      - chmod 755 gradlew
       script:
-        - chmod 755 gradlew
         - echo "Downloading timesheets server $RELEASE_TAG"
         - wget -P applications/timesheets-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/timesheets-server.jar
       before_deploy:
