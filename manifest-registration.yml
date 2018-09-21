@@ -2,7 +2,7 @@ applications:
 - name: tracker-registration
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
-  - route: registration-pal-iuppiter.cfapps.io
+  - route: registration-pal-juppiter.cfapps.io
   instances: 1
   services:
   - tracker-registration-database

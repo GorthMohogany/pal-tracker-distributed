@@ -2,9 +2,9 @@ applications:
 - name: tracker-allocations
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
-  - route: allocations-pal-iuppiter.cfapps.io
+  - route: allocations-pal-juppiter.cfapps.io
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: https://allocations-pal-iuppiter.cfapps.io
+    REGISTRATION_SERVER_ENDPOINT: https://allocations-pal-juppiter.cfapps.io
   services:
   - tracker-allocations-database
