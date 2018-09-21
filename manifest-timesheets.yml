@@ -2,9 +2,9 @@ applications:
 - name: tracker-timesheets
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
-  - route: timesheets-pal-juppiter.cfapps.io
+  - route: timesheets-pal-iuppiter.cfapps.io
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: https://allocations-pal-juppiter.cfapps.io
+    REGISTRATION_SERVER_ENDPOINT: https://allocations-pal-iuppiter.cfapps.io
   services:
   - tracker-timesheets-database

@@ -2,9 +2,9 @@ applications:
 - name: tracker-backlog
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
-  - route: backlog-pal-juppiter.cfapps.io
+  - route: backlog-pal-iuppiter.cfapps.io
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: https://allocations-pal-juppiter.cfapps.io
+    REGISTRATION_SERVER_ENDPOINT: https://allocations-pal-iuppiter.cfapps.io
   services:
   - tracker-backlog-database
