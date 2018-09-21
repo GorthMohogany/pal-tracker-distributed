@@ -34,8 +34,11 @@ public class AllocationController {
 
         if (projectIsActive(form.projectId)) {
             AllocationRecord record = gateway.create(formToFields(form));
+            System.out.println("FLASH! record created!: " + record.id);
             return new ResponseEntity<>(present(record), HttpStatus.CREATED);
         }
+
+        System.out.println("FLASH! SERVICE UNAVAILABLE!!!!!");
 
         return new ResponseEntity<>(HttpStatus.SERVICE_UNAVAILABLE);
     }

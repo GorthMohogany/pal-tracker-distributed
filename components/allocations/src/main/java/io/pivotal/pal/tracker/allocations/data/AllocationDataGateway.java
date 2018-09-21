@@ -26,7 +26,9 @@ public class AllocationDataGateway {
     public AllocationRecord create(AllocationFields fields) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
+
         jdbcTemplate.update(connection -> {
+
             PreparedStatement ps = connection.prepareStatement(
                 "insert into allocations (project_id, user_id, first_day, last_day) values (?, ?, ?, ?)", RETURN_GENERATED_KEYS
             );
@@ -35,8 +37,11 @@ public class AllocationDataGateway {
             ps.setLong(2, fields.userId);
             ps.setDate(3, Date.valueOf(fields.firstDay));
             ps.setDate(4, Date.valueOf(fields.lastDay));
+            System.out.println("FLASH! CREATED PREPARED STATEMENT");
             return ps;
         }, keyHolder);
+
+        System.out.println("FLASH! UPDATE COMPLETE");
 
         return find(keyHolder.getKey().longValue());
     }
