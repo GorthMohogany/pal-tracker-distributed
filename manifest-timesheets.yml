@@ -4,7 +4,6 @@ applications:
   routes:
   - route: timesheets-pal-iuppiter.cfapps.io
   instances: 1
-  env:
-    REGISTRATION_SERVER_ENDPOINT: https://registration-pal-iuppiter.cfapps.io
   services:
   - tracker-timesheets-database
+  - tracker-service-registry
