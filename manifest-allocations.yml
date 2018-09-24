@@ -5,6 +5,6 @@ applications:
   - route: allocations-pal-iuppiter.cfapps.io
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: https://allocations-pal-iuppiter.cfapps.io
+    REGISTRATION_SERVER_ENDPOINT: http://allocations-pal-iuppiter.cfapps.io
   services:
   - tracker-allocations-database
