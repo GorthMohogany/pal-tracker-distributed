@@ -5,9 +5,7 @@ applications:
   - route: backlog-pal-iuppiter.cfapps.io
   instances: 1
   env:
-    GRANT_TYPE: client_credentials
-    SECURITY_USER_NAME: actuator
-    SECURITY_USER_PASSWORD: operations4red
+clea
   services:
   - tracker-backlog-database
   - tracker-service-registry

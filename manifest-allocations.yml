@@ -2,7 +2,7 @@ applications:
 - name: tracker-allocations
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
-  - route: allocations-pal-iuppiter.cfapps.io
+  - route: allocatiOons-pal-iuppiter.cfapps.io
   instances: 1
   env:
     GRANT_TYPE: client_credentials
